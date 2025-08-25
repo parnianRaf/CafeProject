@@ -13,7 +13,6 @@ public class UserDbContext(DbContextOptions<UserDbContext> options) : IdentityDb
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfiguration(new IdentityRoleTypeConfigurations());
-
         base.OnModelCreating(modelBuilder);
         new UserEntityTypeConfiguration().Configure(modelBuilder.Entity<User>());
     }

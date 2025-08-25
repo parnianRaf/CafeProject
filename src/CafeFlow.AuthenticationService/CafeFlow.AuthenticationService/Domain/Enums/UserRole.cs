@@ -1,5 +1,5 @@
 ﻿namespace CafeFlow.AuthenticationService.Domain.Enums;
-public enum UserRole
+public enum RoleEnum
 {
     Barista = 1 ,
     Customer = 2

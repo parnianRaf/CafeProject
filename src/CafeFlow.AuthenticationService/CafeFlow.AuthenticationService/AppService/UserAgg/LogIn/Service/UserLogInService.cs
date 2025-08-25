@@ -3,10 +3,12 @@ using System.Security.Claims;
 using Exception = System.Exception;
 using Microsoft.AspNetCore.Identity;
 using System.IdentityModel.Tokens.Jwt;
+using System.Net;
 using CafeFlow.AuthenticationService.Domain.Entities;
 using CafeFlow.AuthenticationService.AppService.Contracts.Dto;
 using CafeFlow.AuthenticationService.Configuration.Extensions;
 using CafeFlow.AuthenticationService.AppService.Contracts.Interface;
+using CafeFlow.AuthenticationService.ExceptionHandling.ExceptionDtos;
 
 namespace CafeFlow.AuthenticationService.AppService.UserAgg.LogIn.Service;
 
@@ -18,7 +20,7 @@ public class UserLogInService( SignInManager<User> signInManager,IValidator<User
         var user =await signInManager.UserManager.FindByNameAsync(userLogInDto.UserName!);
 
         if (user is null)
-            throw new Exception("username not found");
+            throw new IdentityException("username not found" , (int)HttpStatusCode.NotFound);
         
         var result =await signInManager.PasswordSignInAsync(user!, userLogInDto.Password!,true,false);
         if (result.Succeeded)
