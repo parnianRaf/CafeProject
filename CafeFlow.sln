@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CafeFlow.Framework", "Framework\CafeFlow\CafeFlow.Framework.csproj", "{61BD1385-23ED-4D08-AB79-EB5EF4E8C99D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CafeFlow.NotificationService", "CafeFlow.NotificationService\CafeFlow.NotificationService.csproj", "{1533D009-A235-424A-83F4-21128B48E72E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{61BD1385-23ED-4D08-AB79-EB5EF4E8C99D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61BD1385-23ED-4D08-AB79-EB5EF4E8C99D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61BD1385-23ED-4D08-AB79-EB5EF4E8C99D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1533D009-A235-424A-83F4-21128B48E72E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1533D009-A235-424A-83F4-21128B48E72E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1533D009-A235-424A-83F4-21128B48E72E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1533D009-A235-424A-83F4-21128B48E72E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -34,6 +40,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{E86D79B3-321E-4245-B233-390BCCB78520} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{61BD1385-23ED-4D08-AB79-EB5EF4E8C99D} = {BB61E38C-8869-4361-80AF-EFD6A050CC3C}
+		{1533D009-A235-424A-83F4-21128B48E72E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8489AF63-7C42-4F8F-AB66-40FF5077597B}

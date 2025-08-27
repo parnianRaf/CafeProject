@@ -1,0 +1,6 @@
+@CafeFlow.NotifcationService_HostAddress = http://localhost:5042
+
+GET {{CafeFlow.NotifcationService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

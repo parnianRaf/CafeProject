@@ -13,13 +13,16 @@ public class User : IdentityUser<Guid>
     public string LastName { get; private set; }
 
 
-    public static User GenerateUser(string firstName, string lastName , string userName)
+
+
+    public static User GenerateUser(string firstName, string lastName , string userName , string email)
     {
         return new ()
         {
             FirstName = firstName,
             LastName = lastName,
-            UserName = userName
+            UserName = userName,
+            Email = email
         };
     }
     

@@ -32,6 +32,13 @@ public static class InitialConfiguration
         services.AddDbContext<UserDbContext>(opt =>
             opt.UseSqlServer(configuration.GetConnectionString("AuthenticationConnection")));
         
+        
+        services.AddHttpClient("NotificationService", client =>
+        {
+            client.BaseAddress = new Uri("http://localhost:5042"); 
+            client.Timeout = TimeSpan.FromMinutes(10); 
+        });
+        
         services.AddIdentity<User, Role>(options =>
         {
             options.Password.RequiredLength = 6;

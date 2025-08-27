@@ -23,7 +23,7 @@ public class UserEntityTypeConfiguration :IEntityTypeConfiguration<User>
     private IList<User> UserDataSeed()
     {
         var users = new List<User>();
-        var user = User.GenerateUser("Parnian", "Rafie", "parnian");
+        var user = User.GenerateUser("Parnian", "Rafie", "parnian" , "rafieparnian@gmail.com");
         user.NormalizedUserName = "PARNIAN";
         user.PasswordHash = "AQAAAAIAAYagAAAAEHj8ecEvsbmeGMn9WVQexx8gfga0Minqk17Ru6FZ4PndXrclvY7hXyB1afisD+VTnA=="; // string
         user.SecurityStamp = "XZ5NQPYPMFCFQODGDZYWTRERHEO55TD2";
