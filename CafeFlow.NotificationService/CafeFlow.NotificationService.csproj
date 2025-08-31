@@ -23,4 +23,8 @@
       <ProjectReference Include="..\Framework\CafeFlow\CafeFlow.Framework.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Include="CommonConfiguration.json" />
+    </ItemGroup>
+
 </Project>

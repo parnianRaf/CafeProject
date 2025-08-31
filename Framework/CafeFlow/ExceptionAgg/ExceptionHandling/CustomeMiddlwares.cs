@@ -1,4 +1,6 @@
-namespace CafeFlow.AuthenticationService.ExceptionHandling;
+using Microsoft.AspNetCore.Builder;
+
+namespace CafeFlow.Framework.ExceptionAgg.ExceptionHandling;
 
 public static class CustomeMiddlwares
 {

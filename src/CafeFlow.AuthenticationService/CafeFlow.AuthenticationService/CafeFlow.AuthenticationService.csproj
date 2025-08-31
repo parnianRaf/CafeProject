@@ -21,4 +21,12 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Framework\CafeFlow\CafeFlow.Framework.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="CommonConfiguration.json" />
+  </ItemGroup>
+
 </Project>

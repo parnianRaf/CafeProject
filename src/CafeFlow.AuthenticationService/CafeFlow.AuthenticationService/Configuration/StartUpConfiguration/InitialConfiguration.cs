@@ -6,7 +6,7 @@ using CafeFlow.AuthenticationService.AppService.UserAgg.Register.Validator;
 using CafeFlow.AuthenticationService.Configuration.Extensions;
 using CafeFlow.AuthenticationService.DataAccess;
 using CafeFlow.AuthenticationService.Domain.Entities;
-using CafeFlow.AuthenticationService.Extensions;
+using CafeFlow.Framework.Extensions;
 using FluentValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;

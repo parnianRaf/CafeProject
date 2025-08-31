@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace CafeFlow.AuthenticationService.Extensions;
+namespace CafeFlow.Framework.Extensions;
 public class PersianIdentityErrorDescriber : IdentityErrorDescriber
 {
     public override IdentityError DuplicateEmail(string email) => new IdentityError()

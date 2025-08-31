@@ -5,10 +5,12 @@ using Microsoft.AspNetCore.Identity;
 using CafeFlow.AuthenticationService.Domain.Entities;
 using CafeFlow.AuthenticationService.AppService.Contracts.Dto;
 using CafeFlow.AuthenticationService.AppService.Contracts.Interface;
+using CafeFlow.Framework.LogAgg.Log.Contracts;
 
 namespace CafeFlow.AuthenticationService.AppService.UserAgg.Register.Service;
 
-public class UserRegisterService(UserManager<User> userManager , IValidator<UserRegisterDto> validator, IHttpClientFactory httpClientFactory) : IUserRegisterService
+public class UserRegisterService(UserManager<User> userManager , IValidator<UserRegisterDto> validator, 
+    IHttpClientFactory httpClientFactory , ILogService logService) : IUserRegisterService
 {
     public async Task<List<IdentityError>> Register(UserRegisterDto userRegisterDto)
     {
@@ -18,11 +20,13 @@ public class UserRegisterService(UserManager<User> userManager , IValidator<User
 
         if (result.Succeeded)
         {
+            logService.LogInformation($"User {user.UserName} created successfully");
             result = await userManager.AddToRoleAsync(user, userRegisterDto.UserRole.ToString());
         }
 
         if (result.Succeeded)
         {
+            logService.LogInformation($"Role {userRegisterDto.UserRole.ToString()} has been add to  User {user.UserName} ");
             await SendWelcomeEmail(user.Email! , "Welcome" , "Welcome to the app");
         }
 
@@ -43,6 +47,8 @@ public class UserRegisterService(UserManager<User> userManager , IValidator<User
         var content = new {Subject =subject , Body = message , EmailTo = emailTo};
         var contentJson = new StringContent(JsonSerializer.Serialize(content), Encoding.UTF8, "application/json");
         var response = await client.PostAsync("/api/Notification/Email", contentJson);
+        if(!response.IsSuccessStatusCode)
+            logService.LogError($"Error sending email to {emailTo}");
         return response.IsSuccessStatusCode;
     }
     

@@ -1,4 +1,4 @@
-namespace CafeFlow.AuthenticationService.Extensions;
+namespace CafeFlow.Framework.Extensions;
 
 public static class ExtensionMethods
 {

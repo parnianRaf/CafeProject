@@ -1,7 +1,4 @@
-using System.ComponentModel.DataAnnotations;
-using System.Net;
-using System.Net.Mail;
-using CafeFlow.Framework.Exception;
+using CafeFlow.Framework.ExceptionAgg.Exception;
 using MimeKit;
 using CafeFlow.NotifcationService.AppService.Contracts.Dtos;
 using CafeFlow.NotifcationService.AppService.Contracts.Interfaces;
@@ -20,26 +17,20 @@ public class EmailService(IValidator<EmailServiceDto> validator , IValidator<Ema
     public async Task SendEmailMAilKit(EmailServiceDto emailServiceDto)
     {
         string? result = string.Empty;
-        try
-        {
-            await validator.ValidateAndThrowAsync(emailServiceDto);
-    
-            var message = new MimeMessage();
-            message.From.Add(new MailboxAddress(configure.Name, configure.EmailAddress));
-            message.To.Add(MailboxAddress.Parse(emailServiceDto.EmailTo!));
-            message.Subject = emailServiceDto.Subject!;
-            message.Body =  new TextPart("html") { Text = emailServiceDto.Body! };
-    
-            using var client = new SmtpClient();
-            await client.ConnectAsync(configure.EmailProvider.HostEmailProvider, configure.EmailProvider.PortEmailProvider, MailKit.Security.SecureSocketOptions.StartTls);
-            await client.AuthenticateAsync(configure.EmailAddress, configure.Password);
-            result = await client.SendAsync(message);
-            await client.DisconnectAsync(true);
-        }
-        catch (Exception e)
-        {
-            throw new CommonExceptionDto(e);
-        }
+
+        await validator.ValidateAndThrowAsync(emailServiceDto);
+
+        var message = new MimeMessage();
+        message.From.Add(new MailboxAddress(configure.Name, configure.EmailAddress));
+        message.To.Add(MailboxAddress.Parse(emailServiceDto.EmailTo!));
+        message.Subject = emailServiceDto.Subject!;
+        message.Body =  new TextPart("html") { Text = emailServiceDto.Body! };
+
+        using var client = new SmtpClient();
+        await client.ConnectAsync(configure.EmailProvider.HostEmailProvider, configure.EmailProvider.PortEmailProvider, MailKit.Security.SecureSocketOptions.StartTls);
+        await client.AuthenticateAsync(configure.EmailAddress, configure.Password);
+        result = await client.SendAsync(message);
+        await client.DisconnectAsync(true);
 
         if (!string.IsNullOrEmpty(result))
         {

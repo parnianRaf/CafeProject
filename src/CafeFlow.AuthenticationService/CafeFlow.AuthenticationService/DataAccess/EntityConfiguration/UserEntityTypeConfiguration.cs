@@ -1,5 +1,5 @@
 using CafeFlow.AuthenticationService.Domain.Entities;
-using CafeFlow.AuthenticationService.Extensions;
+using CafeFlow.Framework.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

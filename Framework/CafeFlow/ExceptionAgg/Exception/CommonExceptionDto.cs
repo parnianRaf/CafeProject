@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Net;
 
-namespace CafeFlow.Framework.Exception;
+namespace CafeFlow.Framework.ExceptionAgg.Exception;
 using System;
 public class CommonExceptionDto :Exception
 {

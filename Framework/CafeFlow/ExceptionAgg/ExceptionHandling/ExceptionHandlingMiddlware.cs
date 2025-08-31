@@ -2,19 +2,22 @@ using System.ComponentModel.DataAnnotations;
 using System.Net;
 using System.Text.Json;
 using CafeFlow.AuthenticationService.ExceptionHandling.ExceptionDtos;
-using Microsoft.AspNetCore.Identity;
+using CafeFlow.Framework.LogAgg.Log.Contracts;
+using Microsoft.AspNetCore.Http;
 
-namespace CafeFlow.AuthenticationService.ExceptionHandling;
 
-public class ExceptionHandlingMiddleware(RequestDelegate next)
+namespace CafeFlow.Framework.ExceptionAgg.ExceptionHandling;
+
+public class ExceptionHandlingMiddleware(RequestDelegate next , ILogService logService)
 {
     public async Task InvokeAsync(HttpContext context)
     {
         try
         {
             await next(context);
+
         }
-        catch (Exception e)
+        catch (System.Exception e)
         {
             var statusCode = e switch
             {
@@ -22,7 +25,10 @@ public class ExceptionHandlingMiddleware(RequestDelegate next)
                 IdentityException identityException => identityException.StatusCode,
                 _ => (int)HttpStatusCode.InternalServerError
             };
+            if(statusCode == (int)HttpStatusCode.InternalServerError)
+                logService.LogError(e.Message);
             
+         
  
             var errorResponse = new
             {

@@ -1,3 +1,6 @@
+using CafeFlow.AuthenticationService.ExceptionHandling;
+using CafeFlow.Framework.Configuration;
+using CafeFlow.Framework.ExceptionAgg.ExceptionHandling;
 using CafeFlow.NotifcationService.SetUpConfiguration;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddConfigurationHandler(builder.Configuration);
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
+builder.Services.AddStartup(builder.Host);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -16,15 +20,15 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+else
+{
+    app.UseHttpsRedirection();
+    
+}
 app.MapControllers();
-app.UseHttpsRedirection();
 
-
+app.UseExceptionHandling();
 
 
 app.Run();
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
