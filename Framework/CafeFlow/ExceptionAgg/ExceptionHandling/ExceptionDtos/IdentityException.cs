@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 
-namespace CafeFlow.AuthenticationService.ExceptionHandling.ExceptionDtos;
+namespace CafeFlow.Framework.ExceptionAgg.ExceptionHandling.ExceptionDtos;
 
-public class IdentityException : Exception
+public class IdentityException : System.Exception
 {
     public int StatusCode { get; set; }
     

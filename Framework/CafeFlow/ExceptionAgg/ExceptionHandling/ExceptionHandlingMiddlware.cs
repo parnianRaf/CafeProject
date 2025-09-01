@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Net;
 using System.Text.Json;
-using CafeFlow.AuthenticationService.ExceptionHandling.ExceptionDtos;
+using CafeFlow.Framework.ExceptionAgg.ExceptionHandling.ExceptionDtos;
 using CafeFlow.Framework.LogAgg.Log.Contracts;
 using Microsoft.AspNetCore.Http;
 

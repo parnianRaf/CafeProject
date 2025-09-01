@@ -1,7 +1,7 @@
 using CafeFlow.Framework.LogAgg.Log.Contracts;
 using Microsoft.Extensions.Logging;
 
-namespace CafeFlow.Framework.LogAgg.logService;
+namespace CafeFlow.Framework.LogAgg.LogService;
 
 public class LogService(ILogger<LogService> logger) : ILogService
 {

@@ -8,7 +8,7 @@ using CafeFlow.AuthenticationService.Domain.Entities;
 using CafeFlow.AuthenticationService.AppService.Contracts.Dto;
 using CafeFlow.AuthenticationService.Configuration.Extensions;
 using CafeFlow.AuthenticationService.AppService.Contracts.Interface;
-using CafeFlow.AuthenticationService.ExceptionHandling.ExceptionDtos;
+using CafeFlow.Framework.ExceptionAgg.ExceptionHandling.ExceptionDtos;
 
 namespace CafeFlow.AuthenticationService.AppService.UserAgg.LogIn.Service;
 
