@@ -1,5 +1,4 @@
 using CafeFlow.AuthenticationService.Configuration.StartUpConfiguration;
-using CafeFlow.AuthenticationService.ExceptionHandling;
 using CafeFlow.Framework.Configuration;
 using CafeFlow.Framework.ExceptionAgg.ExceptionHandling;
 
@@ -11,7 +10,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddStartup(builder.Host);
+builder.Services.AddStartup(builder.Host, builder.Configuration);
 builder.Services.AddInitialConfiguration(builder.Configuration);
 
 var app = builder.Build();

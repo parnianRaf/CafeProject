@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MediatR" Version="13.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="CafeProduct\Commands\" />
+      <Folder Include="CafeProduct\Handler\Command\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\..\Framework\CafeFlow\CafeFlow.Framework.csproj" />
+      <ProjectReference Include="..\..\00_CafeService.FrameWorks\CafeService.Contracts\CafeService.FrameWorks\CafeService.FrameWorks.csproj" />
+    </ItemGroup>
+
+</Project>

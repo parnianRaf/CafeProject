@@ -8,9 +8,9 @@ namespace CafeFlow.AuthenticationService.Controllers;
 public class UserController(IUserRegisterService userRegisterService , IUserLogInService userLogInService) :ControllerBase
 {
     [HttpPost(nameof(Register))]
-    public async Task<IActionResult> Register([FromBody] UserRegisterDto userRegisterDto)
+    public async Task<IActionResult> Register([FromBody] UserRegisterDto userRegisterDto , CancellationToken ct)
     {
-        var result = await userRegisterService.Register(userRegisterDto);
+        var result = await userRegisterService.Register(userRegisterDto , ct);
 
         if (result.Any())
         {

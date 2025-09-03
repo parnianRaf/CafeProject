@@ -6,13 +6,13 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Net;
 using CafeFlow.AuthenticationService.Domain.Entities;
 using CafeFlow.AuthenticationService.AppService.Contracts.Dto;
-using CafeFlow.AuthenticationService.Configuration.Extensions;
 using CafeFlow.AuthenticationService.AppService.Contracts.Interface;
+using CafeFlow.Framework.AthenticationToken.Extensions;
 using CafeFlow.Framework.ExceptionAgg.ExceptionHandling.ExceptionDtos;
 
 namespace CafeFlow.AuthenticationService.AppService.UserAgg.LogIn.Service;
 
-public class UserLogInService( SignInManager<User> signInManager,IValidator<UserLogInDto> validator) : IUserLogInService
+public class UserLogInService( SignInManager<User> signInManager,IValidator<UserLogInDto> validator ,ConfigurationEntity configurationEntity) : IUserLogInService
 {
     public async Task<string> LogIn(UserLogInDto userLogInDto)
     {
@@ -36,17 +36,17 @@ public class UserLogInService( SignInManager<User> signInManager,IValidator<User
     {
         var claims = new List<Claim>()
         {
-            new Claim(ClaimTypes.Name , user.UserName!),
+            new Claim(ClaimTypes.Name , user.UserName!)
         };
         roles.ToList().ForEach(r => claims.Add(new Claim(ClaimTypes.Role, r)));
         
-        var key = ConfigurationEntity.SecurityKey;
-        var cred = ConfigurationEntity.SigningCredentials;
+        var key = configurationEntity.SecurityKey;
+        var cred = configurationEntity.SigningCredentials;
         var token = new JwtSecurityToken(
-            issuer: ConfigurationEntity.Issuer,
-            audience: ConfigurationEntity.Audience,
+            issuer: configurationEntity.Issuer,
+            audience: configurationEntity.Audience,
             claims: claims,
-            expires: DateTime.Now.AddMinutes(7),
+            expires: DateTime.Now.AddDays(7),
             signingCredentials: cred);
         return  new JwtSecurityTokenHandler().WriteToken(token);
     }

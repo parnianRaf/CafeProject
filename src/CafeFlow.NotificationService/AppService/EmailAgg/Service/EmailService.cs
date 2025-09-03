@@ -1,0 +1,60 @@
+using CafeFlow.NotifcationService.AppSettingEntity;
+using CafeFlow.NotifcationService.Contracts.AppService.Contracts.Dtos.EmailDtos;
+using CafeFlow.NotifcationService.Contracts.AppService.Contracts.Interfaces;
+using FluentValidation;
+using MimeKit;
+using SmtpClient = MailKit.Net.Smtp.SmtpClient;
+
+namespace CafeFlow.NotifcationService.AppService.EmailAgg.Service;
+
+public class EmailService(IValidator<EmailServiceDto> validator , IValidator<EmailListServiceDto> listValidator 
+    ,EmailConfiguration configure, IAddEmailDetail emailDetail) : IEmailService
+{
+
+    
+    public async Task SendEmailMAilKit(EmailServiceDto emailServiceDto)
+    {
+        string? result = string.Empty;
+
+        await validator.ValidateAndThrowAsync(emailServiceDto);
+
+        var message = new MimeMessage();
+        message.From.Add(new MailboxAddress(configure.Name, configure.EmailAddress));
+        message.To.Add(MailboxAddress.Parse(emailServiceDto.EmailTo!));
+        message.Subject = emailServiceDto.Subject!;
+        message.Body =  new TextPart("html") { Text = emailServiceDto.Body! };
+
+        using var client = new SmtpClient();
+        await client.ConnectAsync(configure.EmailProvider.HostEmailProvider, configure.EmailProvider.PortEmailProvider, MailKit.Security.SecureSocketOptions.StartTls);
+        await client.AuthenticateAsync(configure.EmailAddress, configure.Password);
+        result = await client.SendAsync(message);
+        await client.DisconnectAsync(true);
+
+        if (!string.IsNullOrEmpty(result))
+        {
+            await emailDetail.Handle(emailServiceDto);
+        }
+
+      
+    }
+
+
+    public async Task SendEmailMAilKit(EmailListServiceDto emailServiceDtos)
+    {
+
+        await listValidator.ValidateAndThrowAsync(emailServiceDtos);
+    
+        var message = new MimeMessage();
+        message.From.Add(new MailboxAddress(configure.Name, configure.EmailAddress));
+        emailServiceDtos.EmailTos.ForEach(x => message.Bcc.Add(MailboxAddress.Parse(x)));
+        message.Subject = emailServiceDtos.Subject!;
+        message.Body =  new TextPart("html") { Text = emailServiceDtos.Body! };
+        using var client = new SmtpClient();
+        await client.ConnectAsync(configure.EmailProvider.HostEmailProvider, configure.EmailProvider.PortEmailProvider, MailKit.Security.SecureSocketOptions.StartTls);
+        await client.AuthenticateAsync(configure.EmailAddress, configure.Password);
+        var result =await client.SendAsync(message);
+        
+        await client.DisconnectAsync(true);
+
+    }
+}

@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\..\00_CafeService.FrameWorks\CafeService.Contracts\CafeService.FrameWorks\CafeService.FrameWorks.csproj" />
+      <ProjectReference Include="..\..\..\..\01_CafeService.Domain\CafeService.AppDomain\CafeService.AppDomain.csproj" />
+      <ProjectReference Include="..\..\..\CafeService.DataAccess\CafeService.QueriesDataBase\CafeService.QueriesDataBase\CafeService.QueriesDataBase.csproj" />
+    </ItemGroup>
+
+</Project>

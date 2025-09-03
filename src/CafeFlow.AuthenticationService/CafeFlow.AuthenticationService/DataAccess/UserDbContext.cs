@@ -15,5 +15,7 @@ public class UserDbContext(DbContextOptions<UserDbContext> options) : IdentityDb
         modelBuilder.ApplyConfiguration(new IdentityRoleTypeConfigurations());
         base.OnModelCreating(modelBuilder);
         new UserEntityTypeConfiguration().Configure(modelBuilder.Entity<User>());
+        modelBuilder.ApplyConfiguration(new IdentityUserRoleTypeConfiguration());
+
     }
 }

@@ -19,7 +19,7 @@ namespace CafeFlow.AuthenticationService.DataAccess.EntityConfiguration
                 var id = ExtensionMethods.GenerateDeterministicGuid(role.ToString(), _privateString);
                 var roleEntity = Role.GenerateRole((int)role, role.ToString(), id);
                 roleEntity.NormalizedName = role.ToString().ToUpper(); 
-                builder.HasData();
+                builder.HasData(roleEntity);
             });
             
         }
