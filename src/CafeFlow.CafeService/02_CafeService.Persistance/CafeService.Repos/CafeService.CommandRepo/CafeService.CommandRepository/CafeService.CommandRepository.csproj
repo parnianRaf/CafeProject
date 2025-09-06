@@ -10,6 +10,7 @@
       <ProjectReference Include="..\..\..\..\01_CafeService.Domain\CafeService.AppDomain\CafeService.AppDomain.csproj" />
       <ProjectReference Include="..\..\..\..\04_CafeService.AppService.Contracts\CafeService.AppService.Contracts\CafeService.AppService.ContractsApp\CafeService.AppService.ContractsApp.csproj" />
       <ProjectReference Include="..\..\..\CafeService.DataAccess\CafeService.CommandDataBase\CafeService.MongoDbApp\CafeService.MongoDbApp.csproj" />
+      <ProjectReference Include="..\CafeService.SqlCommandRepository\CafeService.SqlCommandRepository.csproj" />
     </ItemGroup>
 
 </Project>

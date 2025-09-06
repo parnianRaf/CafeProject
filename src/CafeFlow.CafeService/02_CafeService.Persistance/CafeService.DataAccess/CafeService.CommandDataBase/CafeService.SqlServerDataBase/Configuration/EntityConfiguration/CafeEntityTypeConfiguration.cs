@@ -1,24 +1,30 @@
 using CafeService.AppDomain.CafeAgg.Cafe;
 using CafeService.AppDomain.CafeAgg.ValueObjects;
 using CafeService.SqlServerDataBase.Configuration.EntityConfiguration.CommonConfiguration;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace CafeService.SqlServerDataBase.Configuration.EntityConfiguration;
 
-public class CafeEntityTypeConfiguration:BaseEntityConfiguration
+public class CafeEntityTypeConfiguration: BaseEntityConfiguration<Cafe> 
 {
-    public void Configure(EntityTypeBuilder<Cafe> builder)
-    {
-        builder.Property(x => x.Address)
-            .HasField(nameof(Address.Value));
+    public override void Configure(EntityTypeBuilder<Cafe> builder)
+    { 
+        base.Configure(builder);
+        builder.HasKey(x => x.Id);
+        builder.HasQueryFilter(opt => !opt.IsDeleted);
+        builder.OwnsOne(x => x.Address, a =>
+        {
+            a.Property(p => p.Value).HasColumnName("Address").HasMaxLength(350);
+        });
         
-        builder.Property(x => x.PhoneNumber)
-            .HasField(nameof(PhoneNumber.Value));
+        builder.OwnsOne(x => x.PhoneNumber, a =>
+        {
+            a.Property(p => p.Value).HasColumnName("PhoneNumber").HasMaxLength(15);
+        });
         
-        builder.Property(x => x.PhoneNumber)
-            .HasMaxLength(100);
+  
         
-        builder.Property(x => x.Address).
-            HasMaxLength(350);
+       
     }
 }

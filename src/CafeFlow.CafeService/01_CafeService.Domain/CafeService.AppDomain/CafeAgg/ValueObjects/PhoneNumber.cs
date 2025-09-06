@@ -4,12 +4,13 @@ namespace CafeService.AppDomain.CafeAgg.ValueObjects;
 
 public class PhoneNumber
 {
+    private PhoneNumber(){}
      public PhoneNumber(string? phoneNumber)
     {
         IsValidPhoneNumber(phoneNumber);
         Value = NormalizedPhoneNumber(phoneNumber!);
     }
-    public string Value { get; }
+    public string Value { get; set; }
 
     private void IsValidPhoneNumber(string? phoneNumber)
     {

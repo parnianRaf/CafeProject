@@ -4,13 +4,17 @@ namespace CafeService.AppDomain.CafeAgg.ValueObjects;
 
 public class Address
 {
+    private Address()
+    {
+        
+    }
     public Address(string? mainStreet, string? street , string? postalCode , int? numberPlate)
     {
         IsValidAddress(mainStreet, street, postalCode, numberPlate);
         Value = NormalizedAddress(mainStreet, street, postalCode, numberPlate!.Value);
     }
 
-    public string Value { get;}
+    public string Value { get; set; }
 
     private string NormalizedAddress(string? mainStreet, string? street , string? postalCode , int numberPlate)
     {

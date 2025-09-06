@@ -4,9 +4,10 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace CafeService.SqlServerDataBase.Configuration.EntityConfiguration.CommonConfiguration;
 
-public class BaseEntityConfiguration:IEntityTypeConfiguration<BaseClass>
+public class BaseEntityConfiguration<T>:IEntityTypeConfiguration<T> where T :BaseClass
 {
-    public void Configure(EntityTypeBuilder<BaseClass> builder)
+
+    public virtual void Configure(EntityTypeBuilder<T> builder)
     {
         builder.HasKey(x => x.Id);
         builder.HasQueryFilter(opt => !opt.IsDeleted);

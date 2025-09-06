@@ -19,10 +19,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddCafeService();
 builder.Services.AddStartup(builder.Host , builder.Configuration);
 builder.Services.StartUpMongoDbConfiguration();
+builder.Services.ConfigureSqlServerDataBase(builder.Configuration);
 builder.Services.StartUpCommandRepoConfiguration();
 builder.Services.StartUpQueriesRepoConfiguration();
 builder.Services.StartUpSqlDbConfiguration(builder.Configuration);
-builder.Services.ConfigureSqlServerDataBase(builder.Configuration);
 builder.Services.SqlCommandRepoConfigure();
 var app = builder.Build();
 

@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace CefeService.WebApiApp;
+namespace CefeService.WebApiApp.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

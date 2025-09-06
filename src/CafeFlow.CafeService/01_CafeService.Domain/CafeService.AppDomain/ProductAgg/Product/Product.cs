@@ -4,6 +4,7 @@ namespace CafeService.AppDomain.ProductAgg.Product;
 
 public class Product:BaseClass
 {
+    private Product() : base(){}
     public string Name { get; set; } = null!;
     public string? ProductCode { get; set; }
     public string? Description { get; set; }

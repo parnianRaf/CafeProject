@@ -5,7 +5,7 @@ namespace CafeService.AppDomain.CafeAgg.Cafe;
 
 public class Cafe: BaseClass
 {
-    private Cafe(string name)
+    private Cafe(string name):base()
     {
         Name = name;
     }
