@@ -1,4 +1,5 @@
-﻿using Humanizer;
+﻿
+using Humanizer;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
 

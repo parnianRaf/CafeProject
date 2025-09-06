@@ -8,7 +8,7 @@ using CafeFlow.AuthenticationService.Domain.Entities;
 using CafeFlow.AuthenticationService.AppService.Contracts.Dto;
 using CafeFlow.AuthenticationService.AppService.Contracts.Interface;
 using CafeFlow.Framework.AthenticationToken.Extensions;
-using CafeFlow.Framework.ExceptionAgg.ExceptionHandling.ExceptionDtos;
+using CafeFlow.Framework.ExceptionAgg.Exception;
 
 namespace CafeFlow.AuthenticationService.AppService.UserAgg.LogIn.Service;
 
@@ -20,7 +20,7 @@ public class UserLogInService( SignInManager<User> signInManager,IValidator<User
         var user =await signInManager.UserManager.FindByNameAsync(userLogInDto.UserName!);
 
         if (user is null)
-            throw new IdentityException("username not found" , (int)HttpStatusCode.NotFound);
+            throw CommonExceptionDto.GenerateCommonException("username not found",(int)HttpStatusCode.NotFound);
         
         var result =await signInManager.PasswordSignInAsync(user!, userLogInDto.Password!,true,false);
         if (result.Succeeded)

@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using MongoDB.Driver;
 using CafeFlow.NotifcationService.DataAccess.Context;
 using CafeFlow.NotifcationService.Domain.Entity.Common;
-using MongoDB.Entities;
 
 
 namespace CafeFlow.NotifcationService.DataAccess.Repo;

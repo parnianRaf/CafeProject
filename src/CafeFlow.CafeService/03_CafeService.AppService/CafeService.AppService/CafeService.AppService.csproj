@@ -13,11 +13,15 @@
     <ItemGroup>
       <Folder Include="CafeProduct\Commands\" />
       <Folder Include="CafeProduct\Handler\Command\" />
+      <Folder Include="ProductAgg\Commands\AddProductAgg\Handler\" />
+      <Folder Include="ProductAgg\Commands\AddProductAgg\Validator\" />
+      <Folder Include="ProductAgg\Handlers\" />
+      <Folder Include="ProductAgg\Queries\" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\..\..\..\Framework\CafeFlow\CafeFlow.Framework.csproj" />
-      <ProjectReference Include="..\..\00_CafeService.FrameWorks\CafeService.Contracts\CafeService.FrameWorks\CafeService.FrameWorks.csproj" />
+      <ProjectReference Include="..\..\04_CafeService.AppService.Contracts\CafeService.AppService.Contracts\CafeService.AppService.ContractsApp\CafeService.AppService.ContractsApp.csproj" />
     </ItemGroup>
 
 </Project>

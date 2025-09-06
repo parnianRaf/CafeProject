@@ -7,4 +7,6 @@ public abstract class BaseClass
         Id = Guid.NewGuid().ToString();
     }
     public string Id { get; set; }
+
+    public bool IsDeleted { get; set; }
 }

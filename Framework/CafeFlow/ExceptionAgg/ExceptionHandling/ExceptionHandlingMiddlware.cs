@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Net;
 using System.Text.Json;
-using CafeFlow.Framework.ExceptionAgg.ExceptionHandling.ExceptionDtos;
+using CafeFlow.Framework.ExceptionAgg.Exception;
 using CafeFlow.Framework.LogAgg.Log.Contracts;
 using Microsoft.AspNetCore.Http;
 
@@ -22,7 +22,7 @@ public class ExceptionHandlingMiddleware(RequestDelegate next , ILogService logS
             var statusCode = e switch
             {
                 ValidationException => (int)HttpStatusCode.BadRequest,
-                IdentityException identityException => identityException.StatusCode,
+                CommonExceptionDto commonExceptionDto => commonExceptionDto.StatusCode,
                 _ => (int)HttpStatusCode.InternalServerError
             };
             if(statusCode == (int)HttpStatusCode.InternalServerError)

@@ -1,10 +1,9 @@
 using System.Text;
 using CafeFlow.Framework.AthenticationToken.Extensions;
-using CafeFlow.Framework.HttpClientFactoryService;
-using CafeFlow.Framework.HttpClientFactoryService.Service;
-using CafeFlow.Framework.HttpClientFactoryService.Service.Contracts;
 using CafeFlow.Framework.LogAgg.Log.Contracts;
 using CafeFlow.Framework.LogAgg.LogService;
+using CafeFlow.Framework.Provider.Notification.Service;
+using CafeFlow.Framework.Provider.Notification.Service.Contracts;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

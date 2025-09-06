@@ -8,15 +8,21 @@ public class CommonExceptionDto :Exception
 
     public int StatusCode { get; }
     
-    public CommonExceptionDto(Exception exception)
-        : base(exception.Message)
+    private CommonExceptionDto(string message, int statusCode = (int)HttpStatusCode.BadRequest)
+        : base(message)
     {
-        StatusCode = exception switch
-        {
-            // ValidationException => (int)HttpStatusCode.BadRequest,
-            // IdentityException identityException => identityException.StatusCode,
-            _ => (int)HttpStatusCode.InternalServerError
-        };
+        StatusCode = statusCode;
     }
+
+    public static CommonExceptionDto GenerateCommonException(string message )
+    {
+        return new(message);
+    }
+    public static CommonExceptionDto GenerateCommonException(string message , int statusCode)
+    {
+        return new(message , statusCode);
+    }
+    
+
 
 }

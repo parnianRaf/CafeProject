@@ -1,4 +1,5 @@
 ﻿using CafeService.AppDomain.CommonEntity;
+using CafeService.FrameWorks.Contracts.Repository.Contracts;
 using CafeService.QueriesDataBase;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,14 +10,22 @@ public class BaseGenericRepository<T>(CafeDataDbContext context) : IBaseGenericR
     private readonly DbSet<T> _dbSet = context.Set<T>();
     
     
-    public virtual  IQueryable<T> GetAll()
+    public async Task<T?> GetAsync(Guid id)
     {
-        return  _dbSet;
+        var entity =await  _dbSet.FindAsync(id);
+        return entity;
     }
 
-    public virtual async Task<T?> GetById(Guid id)
+    
+    // it shouldn't be used because it is sync
+    public async  Task<IQueryable<T>?> GetAllAsync()
     {
-        return await _dbSet.FindAsync(id);
+        return await Task.FromResult(_dbSet.AsQueryable());
+    }
+
+    public IQueryable<T> GetAll()
+    {
+        return _dbSet;
     }
     
     

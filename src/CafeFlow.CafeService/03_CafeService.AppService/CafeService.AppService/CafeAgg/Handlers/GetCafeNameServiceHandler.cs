@@ -1,6 +1,6 @@
-using CafeService.AppDomain.CafeAgg.Entity;
+using CafeService.AppDomain.CafeAgg.Cafe;
 using CafeService.AppService.CafeAgg.Queries;
-using CafeService.QueryRepositories;
+using CafeService.FrameWorks.Contracts.Repository.Contracts;
 using MediatR;
 
 namespace CafeService.AppService.CafeAgg.Handlers;

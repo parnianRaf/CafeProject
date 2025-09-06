@@ -14,7 +14,8 @@ namespace CafeFlow.NotifcationService.SetUpConfiguration;
 
 public static class ConfigurationHandler
 {
-    public static IServiceCollection AddConfigurationHandler(this IServiceCollection services , IConfiguration configuration)
+    public static IServiceCollection AddConfigurationHandler(this IServiceCollection services 
+        , IConfiguration configuration)
     {
         services.AddValidatorsFromAssembly(typeof(EmailServiceDtoValidate).Assembly);
         services.AddScoped<IEmailService, EmailService>();

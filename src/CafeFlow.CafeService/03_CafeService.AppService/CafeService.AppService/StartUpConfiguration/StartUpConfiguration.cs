@@ -1,7 +1,6 @@
 using CafeService.AppService.CafeAgg.Commands.AddCafeService.Service;
 using CafeService.AppService.CafeAgg.Commands.AddCafeService.Validator;
 using FluentValidation;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CafeService.AppService.StartUpConfiguration;

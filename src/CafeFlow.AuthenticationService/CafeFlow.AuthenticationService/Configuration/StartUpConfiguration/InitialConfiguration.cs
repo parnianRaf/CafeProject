@@ -5,6 +5,7 @@ using CafeFlow.AuthenticationService.AppService.UserAgg.Register.Service;
 using CafeFlow.AuthenticationService.AppService.UserAgg.Register.Validator;
 using CafeFlow.AuthenticationService.DataAccess;
 using CafeFlow.AuthenticationService.Domain.Entities;
+using CafeFlow.AuthenticationService.Extensions;
 using CafeFlow.Framework.AthenticationToken.Extensions;
 using CafeFlow.Framework.Extensions;
 using FluentValidation;

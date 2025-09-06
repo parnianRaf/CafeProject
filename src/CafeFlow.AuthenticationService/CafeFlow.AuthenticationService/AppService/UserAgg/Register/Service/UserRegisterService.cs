@@ -1,12 +1,12 @@
 using System.Text;
-using System.Text.Json;
 using FluentValidation;
 using Microsoft.AspNetCore.Identity;
 using CafeFlow.AuthenticationService.Domain.Entities;
 using CafeFlow.AuthenticationService.AppService.Contracts.Dto;
 using CafeFlow.AuthenticationService.AppService.Contracts.Interface;
-using CafeFlow.Framework.HttpClientFactoryService.Service.Contracts;
+using CafeFlow.Framework.ExceptionAgg.Exception;
 using CafeFlow.Framework.LogAgg.Log.Contracts;
+using CafeFlow.Framework.Provider.Notification.Service.Contracts;
 
 namespace CafeFlow.AuthenticationService.AppService.UserAgg.Register.Service;
 
@@ -15,7 +15,7 @@ public class UserRegisterService(UserManager<User> userManager , IValidator<User
 {
     public async Task<List<IdentityError>> Register(UserRegisterDto userRegisterDto , CancellationToken ct)
     {
-       // await Validate(userRegisterDto);
+        await Validate(userRegisterDto);
         var user = User.GenerateUser(userRegisterDto.FirstName!, userRegisterDto.LastName!,  userRegisterDto.UserName! , userRegisterDto.Email!);
         var result =  await userManager.CreateAsync(user, userRegisterDto.Password!);
 
@@ -28,7 +28,10 @@ public class UserRegisterService(UserManager<User> userManager , IValidator<User
         if (result.Succeeded)
         {
             logService.LogInformation($"Role {userRegisterDto.UserRole.ToString()} has been add to  User {user.UserName} ");
-            await SendEmail(user.Email! , "Welcome" , "Welcome to the app" , ct);
+            var emilSendResult = await notificationService.SendEmail(user.Email! , "Welcome" , "Welcome to the app" , ct);
+            if(!emilSendResult.IsValid)
+                 logService.LogError($"Error sending email to {user.Email} : detail:{emilSendResult.Message}");
+                
         }
 
         return (List<IdentityError>)result.Errors;
@@ -39,18 +42,10 @@ public class UserRegisterService(UserManager<User> userManager , IValidator<User
         await validator.ValidateAndThrowAsync(userRegisterDto);
         var user = await userManager.FindByNameAsync(userRegisterDto.UserName!);
         if(user is not null)
-            throw new  ValidationException("Username already exists.");
+            throw  CommonExceptionDto.GenerateCommonException("Username already exists.");
     }
 
-    private async Task<bool> SendEmail(string emailTo , string subject , string message , CancellationToken cancellation)
-    {
-        var content = new {Subject =subject , Body = message , EmailTo = emailTo};
-        using var contentJson = new StringContent(JsonSerializer.Serialize(content), Encoding.UTF8, "application/json");
-        var response = await notificationService.PostAsync(contentJson, "/api/Notification/Email", cancellation);
-        if(!response.IsSuccessStatusCode)
-            logService.LogError($"Error sending email to {emailTo} : detail:{response.Message}");
-        return response.IsSuccessStatusCode;
-    }
+
     
     
 }

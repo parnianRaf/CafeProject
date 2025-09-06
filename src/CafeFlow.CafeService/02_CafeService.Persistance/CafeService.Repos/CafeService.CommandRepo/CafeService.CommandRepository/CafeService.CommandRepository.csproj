@@ -7,8 +7,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\..\..\00_CafeService.FrameWorks\CafeService.Contracts\CafeService.FrameWorks\CafeService.FrameWorks.csproj" />
       <ProjectReference Include="..\..\..\..\01_CafeService.Domain\CafeService.AppDomain\CafeService.AppDomain.csproj" />
+      <ProjectReference Include="..\..\..\..\04_CafeService.AppService.Contracts\CafeService.AppService.Contracts\CafeService.AppService.ContractsApp\CafeService.AppService.ContractsApp.csproj" />
       <ProjectReference Include="..\..\..\CafeService.DataAccess\CafeService.CommandDataBase\CafeService.MongoDbApp\CafeService.MongoDbApp.csproj" />
     </ItemGroup>
 

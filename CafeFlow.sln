@@ -31,11 +31,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02_CafeService.Persistance"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03_CafeService.AppService", "03_CafeService.AppService", "{3EA7592B-C2F5-44F1-BFB0-8221DB5AD519}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04_CafeService.Presentation", "04_CafeService.Presentation", "{C1892AF8-77A6-404B-918D-8C96AFF2B860}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05_CafeService.Presentation", "05_CafeService.Presentation", "{C1892AF8-77A6-404B-918D-8C96AFF2B860}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CafeService.AppDomain", "src\CafeFlow.CafeService\01_CafeService.Domain\CafeService.AppDomain\CafeService.AppDomain.csproj", "{5C7464D4-BE86-4B98-BFC5-860384C95992}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CefeService.WebApiApp", "src\CafeFlow.CafeService\04_CafeService.Presentation\CafeSrvice.WebApi\CefeService.WebApiApp\CefeService.WebApiApp.csproj", "{3C2FDDF7-182A-412F-9005-E34EBEA4C049}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CefeService.WebApiApp", "src\CafeFlow.CafeService\05_CafeService.Presentation\CafeSrvice.WebApi\CefeService.WebApiApp\CefeService.WebApiApp.csproj", "{3C2FDDF7-182A-412F-9005-E34EBEA4C049}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CafeService.AppService", "src\CafeFlow.CafeService\03_CafeService.AppService\CafeService.AppService\CafeService.AppService.csproj", "{D6379C8D-00AE-497F-95BF-9FC8B914E7E3}"
 EndProject
@@ -58,15 +58,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CafeService.CommandDatabase
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CafeService.MongoDbApp", "src\CafeFlow.CafeService\02_CafeService.Persistance\CafeService.DataAccess\CafeService.CommandDataBase\CafeService.MongoDbApp\CafeService.MongoDbApp.csproj", "{02132D17-ED05-4615-B8F5-60A5E3B0C304}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00_CafeService.FrameWorks", "00_CafeService.FrameWorks", "{827DC4DF-AD87-4626-A140-90A146353BDB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04_CafeService.AppService.Contracts", "04_CafeService.AppService.Contracts", "{827DC4DF-AD87-4626-A140-90A146353BDB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CafeService.Contracts", "CafeService.Contracts", "{D5477CAC-6D76-4B36-8A60-C6479F0AC6CD}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CafeService.AppService.Contracts", "CafeService.AppService.Contracts", "{D5477CAC-6D76-4B36-8A60-C6479F0AC6CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CafeService.FrameWorks", "src\CafeFlow.CafeService\00_CafeService.FrameWorks\CafeService.Contracts\CafeService.FrameWorks\CafeService.FrameWorks.csproj", "{0674B8F7-D386-4DFD-B8E7-E3453D605324}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CafeService.AppService.ContractsApp", "src\CafeFlow.CafeService\04_CafeService.AppService.Contracts\CafeService.AppService.Contracts\CafeService.AppService.ContractsApp\CafeService.AppService.ContractsApp.csproj", "{0674B8F7-D386-4DFD-B8E7-E3453D605324}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CafeService.QueriesDatabase", "CafeService.QueriesDatabase", "{0F0A6E3A-D538-433F-B61F-B5C9F12B08EA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CafeService.QueriesDataBase", "src\CafeFlow.CafeService\02_CafeService.Persistance\CafeService.DataAccess\CafeService.QueriesDataBase\CafeService.QueriesDataBase\CafeService.QueriesDataBase.csproj", "{37ACEC58-0494-40DA-8F00-B8760B0BC6AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CafeService.SqlServerDataBase", "src\CafeFlow.CafeService\02_CafeService.Persistance\CafeService.DataAccess\CafeService.CommandDataBase\CafeService.SqlServerDataBase\CafeService.SqlServerDataBase.csproj", "{B815C639-8E99-47C7-8C38-0C6E2892DBA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CafeService.SqlCommandRepository", "src\CafeFlow.CafeService\02_CafeService.Persistance\CafeService.Repos\CafeService.CommandRepo\CafeService.SqlCommandRepository\CafeService.SqlCommandRepository.csproj", "{7C15FABA-96BA-4935-B566-64380B147568}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -122,6 +126,14 @@ Global
 		{37ACEC58-0494-40DA-8F00-B8760B0BC6AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37ACEC58-0494-40DA-8F00-B8760B0BC6AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37ACEC58-0494-40DA-8F00-B8760B0BC6AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B815C639-8E99-47C7-8C38-0C6E2892DBA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B815C639-8E99-47C7-8C38-0C6E2892DBA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B815C639-8E99-47C7-8C38-0C6E2892DBA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B815C639-8E99-47C7-8C38-0C6E2892DBA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C15FABA-96BA-4935-B566-64380B147568}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C15FABA-96BA-4935-B566-64380B147568}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C15FABA-96BA-4935-B566-64380B147568}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C15FABA-96BA-4935-B566-64380B147568}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -155,6 +167,8 @@ Global
 		{0674B8F7-D386-4DFD-B8E7-E3453D605324} = {D5477CAC-6D76-4B36-8A60-C6479F0AC6CD}
 		{0F0A6E3A-D538-433F-B61F-B5C9F12B08EA} = {EA2CC28A-BE21-491E-94FB-AD8255127586}
 		{37ACEC58-0494-40DA-8F00-B8760B0BC6AE} = {0F0A6E3A-D538-433F-B61F-B5C9F12B08EA}
+		{B815C639-8E99-47C7-8C38-0C6E2892DBA9} = {9EA1809F-A2D7-458C-AAE2-57FE60BEC37F}
+		{7C15FABA-96BA-4935-B566-64380B147568} = {26BC457A-2025-43AC-92A1-E8D7F0056722}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8489AF63-7C42-4F8F-AB66-40FF5077597B}

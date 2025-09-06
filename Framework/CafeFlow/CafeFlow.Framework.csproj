@@ -18,6 +18,7 @@
     <PackageReference Include="Humanizer" Version="3.0.0-beta.96" />
     <PackageReference Include="MediatR" Version="13.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.4" />
     <PackageReference Include="Serilog.AspNetCore" Version="8.0.0" />
     <PackageReference Include="Serilog.Sinks.Console" Version="6.0.1-dev-00953" />
@@ -30,6 +31,8 @@
   <ItemGroup>
     <Folder Include="AthenticationToken\" />
     <Folder Include="ExceptionAgg\" />
+    <Folder Include="ExceptionAgg\ExceptionHandling\ExceptionDtos\" />
+    <Folder Include="Provider\Notification\" />
   </ItemGroup>
 
 </Project>

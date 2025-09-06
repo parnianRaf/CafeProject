@@ -8,11 +8,12 @@ public class User : IdentityUser<Guid>
     {
         Id = Guid.NewGuid();
     }
+    
+    
+    // i assure it is not null , i have validator to check its not null
 
-    public string FirstName { get;  private set; }
-    public string LastName { get; private set; }
-
-
+    public string FirstName { get; private set; } = null!;
+    public string LastName { get; private set; } = null!;
 
 
     public static User GenerateUser(string firstName, string lastName , string userName , string email)
