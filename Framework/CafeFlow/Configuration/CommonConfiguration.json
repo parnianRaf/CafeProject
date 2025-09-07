@@ -1,0 +1,51 @@
+{
+  "Serilog": {
+    "Using": [
+      "Serilog.Sinks.Console",
+      "Serilog.Sinks.PostgreSQL",
+      "Serilog.Sinks.Seq",
+      "Serilog.Sinks.Elasticsearch"
+    ],
+    "MinimumLevel": {
+      "Default": "Debug",
+      "Override": {
+        "Microsoft": "Warning",
+        "System": "Warning"
+      }
+    },
+    "Enrich": [ "FromLogContext", "WithMachineName", "WithThreadId" ],
+    "WriteTo": [
+      {
+        "Name": "Console",
+        "Args": {
+          "restrictedToMinimumLevel": "Debug",
+          "outputTemplate": "[{Timestamp:yyyy-MM-dd HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}"
+        }
+      },
+      {
+        "Name": "PostgreSQL",
+        "Args": {
+          "connectionString": "Host=localhost;Database=postgresql;Username=postgres;Password=    ",
+          "tableName": "ErrorLogs",
+          "autoCreateTable": true,
+          "restrictedToMinimumLevel": "Error"
+        }
+      },
+      {
+        "Name": "Seq",
+        "Args": {
+          "serverUrl": "http://localhost:5341",
+          "restrictedToMinimumLevel": "Debug"
+        }
+      },
+      {
+        "Name": "Elasticsearch",
+        "Args": {
+          "nodeUris": "http://localhost:9200",
+          "indexFormat": "CafeFlow-logs-{0:yyyy.MM.dd}",
+          "restrictedToMinimumLevel": "Debug"
+        }
+      }
+    ]
+  }
+}

@@ -13,22 +13,27 @@ public class PersianIdentityErrorDescriber : IdentityErrorDescriber
         Code = nameof(DuplicateUserName),
         Description = $"نام کاربری {userName} قبلاً توسط شخص دیگری انتخاب شده است"
     };
-    public override IdentityError InvalidEmail(string email) => new IdentityError()
+
+    public override IdentityError InvalidEmail(string? email)
     {
-        Code = nameof(InvalidEmail),
-        Description = $"ایمیل {email} یک ایمیل معتبر نیست"
-    };
+        if (email is null)
+           return new IdentityError() { Code = nameof(InvalidEmail), Description = "ایمیل را وارد نمایید" };
+            
+        return new IdentityError() { Code = nameof(InvalidEmail), Description = $"ایمیل {email} یک ایمیل معتبر نیست" };
+    }
+
     public override IdentityError DuplicateRoleName(string role) => new IdentityError()
     {
         Code = nameof(DuplicateRoleName),
         Description = $"مقام {role} قبلاً ثبت شده است"
     };
-    public override IdentityError InvalidRoleName(string role) => new IdentityError()
-    {
-        Code = nameof(InvalidRoleName),
-        Description = $"نام {role} معتبر نیست"
-    };
 
+    public override IdentityError InvalidRoleName(string? role)
+    {
+        if (role is null)
+            return new IdentityError() { Code = nameof(InvalidRoleName), Description = "رول را وارد کنید." };
+        return new IdentityError()  {  Code = nameof(InvalidRoleName),  Description = $"نام {role} معتبر نیست" };
+    } 
     public override IdentityError PasswordRequiresDigit() => new IdentityError()
     {
         Code = nameof(PasswordRequiresDigit),

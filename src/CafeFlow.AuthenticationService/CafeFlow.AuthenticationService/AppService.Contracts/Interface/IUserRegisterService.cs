@@ -5,6 +5,6 @@ namespace CafeFlow.AuthenticationService.AppService.Contracts.Interface;
 
 public interface IUserRegisterService
 {
-    Task<List<IdentityError>> Register(UserRegisterDto userRegisterDto);
+    Task<List<IdentityError>> Register(UserRegisterDto userRegisterDto , CancellationToken ct);
 
 }
