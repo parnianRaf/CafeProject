@@ -1,4 +1,4 @@
-namespace CafeFlow.Framework.Entity;
+namespace CafeFlow.Framework.ResultDtos;
 
 public class FrameWorkResult(bool isValid = true, string message = "")
 {

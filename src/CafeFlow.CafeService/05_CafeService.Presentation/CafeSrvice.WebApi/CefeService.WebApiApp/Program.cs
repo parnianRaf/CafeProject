@@ -6,7 +6,7 @@ using CafeService.MongoDbApp.Configuration;
 using CafeService.QueriesDataBase.Configuration;
 using CafeService.QueryRepositories.Configuration;
 using CafeService.SqlCommandRepository.StartUpConfiguration;
-using CafeService.SqlServerDataBase.Configuration.StartUpConfiguration;
+using CafeService.SqlServerDataBase._Common.StartUpConfiguration;
 using CefeService.WebApiApp;
 
 var builder = WebApplication.CreateBuilder(args);

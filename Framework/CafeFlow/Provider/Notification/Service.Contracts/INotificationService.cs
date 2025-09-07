@@ -1,4 +1,4 @@
-using CafeFlow.Framework.Entity;
+using CafeFlow.Framework.ResultDtos;
 
 namespace CafeFlow.Framework.Provider.Notification.Service.Contracts;
 

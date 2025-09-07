@@ -17,8 +17,8 @@ public class UnitOfWorks(CafeDbContext dbContext) : IUnitOfWorks
         dbContext.Dispose();
     }
 
-    public async Task SaveChangesAsync()
+    public async Task SaveChangesAsync(CancellationToken cancellationToken = default)
     {
-        await dbContext.SaveChangesAsync();
+        await dbContext.SaveChangesAsync(cancellationToken);
     }
 }

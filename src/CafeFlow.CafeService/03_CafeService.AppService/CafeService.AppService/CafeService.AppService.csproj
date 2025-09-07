@@ -13,8 +13,6 @@
     <ItemGroup>
       <Folder Include="CafeProduct\Commands\" />
       <Folder Include="CafeProduct\Handler\Command\" />
-      <Folder Include="ProductAgg\Commands\AddProductAgg\Handler\" />
-      <Folder Include="ProductAgg\Commands\AddProductAgg\Validator\" />
       <Folder Include="ProductAgg\Handlers\" />
       <Folder Include="ProductAgg\Queries\" />
     </ItemGroup>

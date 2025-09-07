@@ -9,8 +9,8 @@ public static class StartUpConfiguration
 {
     public static IServiceCollection AddCafeService(this IServiceCollection services)
     {
-        services.AddValidatorsFromAssembly(typeof(AddCafeServiceValidator).Assembly);
-        services.AddMediatR(opt => opt.RegisterServicesFromAssembly(typeof(AddCafeService).Assembly));
+        services.AddValidatorsFromAssembly(typeof(AddCafeCommandValidator).Assembly);
+        services.AddMediatR(opt => opt.RegisterServicesFromAssembly(typeof(AddCafeCommand).Assembly));
         return services;
     }
 }

@@ -1,7 +1,7 @@
 using System.Text;
 using System.Text.Json;
-using CafeFlow.Framework.Entity;
 using CafeFlow.Framework.Provider.Notification.Service.Contracts;
+using CafeFlow.Framework.ResultDtos;
 
 namespace CafeFlow.Framework.Provider.Notification.Service;
 

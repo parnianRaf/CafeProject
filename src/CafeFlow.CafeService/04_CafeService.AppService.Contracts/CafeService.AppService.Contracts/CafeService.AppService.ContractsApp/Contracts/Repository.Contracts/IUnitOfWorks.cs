@@ -7,5 +7,5 @@ public interface IUnitOfWorks
 {
     DbSet<T> Set<T>() where T : BaseClass;
     void Dispose();
-    Task SaveChangesAsync();
+    Task SaveChangesAsync(CancellationToken cancellationToken = default);
 }

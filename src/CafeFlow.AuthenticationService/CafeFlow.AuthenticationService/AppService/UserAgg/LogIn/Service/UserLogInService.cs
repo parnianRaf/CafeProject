@@ -36,7 +36,8 @@ public class UserLogInService( SignInManager<User> signInManager,IValidator<User
     {
         var claims = new List<Claim>()
         {
-            new Claim(ClaimTypes.Name , user.UserName!)
+            new Claim(ClaimTypes.Name , user.UserName!),
+            new Claim(ClaimTypes.NameIdentifier , user.Id.ToString())
         };
         roles.ToList().ForEach(r => claims.Add(new Claim(ClaimTypes.Role, r)));
         

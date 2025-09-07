@@ -1,4 +1,6 @@
-namespace CafeFlow.Framework.Entity;
+using System.Net;
+
+namespace CafeFlow.Framework.ResultDtos;
 
 public class OutputApiResult
 {
@@ -17,5 +19,11 @@ public class OutputApiResult
     {
         return new(statusCode, message, data);
     }
+    
+    public static OutputApiResult GenerateOutputApiResult(OutPutDto outPut)
+    {
+        var finalResultStatusCode = outPut.IsValid ? (int)HttpStatusCode.OK : (int)HttpStatusCode.BadRequest;
+        return new(finalResultStatusCode,outPut.Message,null);
+    } 
     
 }

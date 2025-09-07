@@ -11,15 +11,11 @@ namespace CafeService.SqlServerDataBase.Context;
 public class CafeDbContext:DbContext
 {
     private readonly IHttpContextAccessor _httpContextAccessor;
-    public CafeDbContext(DbContextOptions<CafeDbContext> options ):base(options)
-    {
-
-    }
-
-    public CafeDbContext(IHttpContextAccessor accessor)
+    public CafeDbContext(DbContextOptions<CafeDbContext> options,IHttpContextAccessor accessor):base(options)
     {
         _httpContextAccessor = accessor; 
     }
+    
     public DbSet<Cafe> Cafes { get; set; }
     public DbSet<Product> Products { get; set; }
 

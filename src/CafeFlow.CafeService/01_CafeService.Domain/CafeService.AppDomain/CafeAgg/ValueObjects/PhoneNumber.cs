@@ -16,7 +16,7 @@ public class PhoneNumber
     {
         if(phoneNumber == null)
             throw CommonExceptionDto.GenerateCommonException("phone number should not be null");
-        if(int.TryParse(phoneNumber[^1..], out _))
+        if(!int.TryParse(phoneNumber[^1..], out _))
             throw CommonExceptionDto.GenerateCommonException("phone number should be an integer");
     }
 

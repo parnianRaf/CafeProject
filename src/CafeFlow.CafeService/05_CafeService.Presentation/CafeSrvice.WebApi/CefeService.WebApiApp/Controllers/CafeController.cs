@@ -1,3 +1,5 @@
+using System.Net;
+using CafeFlow.Framework.ResultDtos;
 using CafeService.AppService.CafeAgg.Commands.AddCafeService.Service;
 using CafeService.AppService.CafeAgg.Queries;
 using CafeService.FrameWorks.Dto.CafeAggDto;
@@ -11,12 +13,12 @@ namespace CefeService.WebApiApp.Controllers;
 [Route("api/[controller]")]
 public class CafeController(IMediator mediator ):ControllerBase
 {
-    [HttpPost(nameof(AddCafeService))]
+    [HttpPost(nameof(Add))]
     [Authorize(Roles = "Admin")]
-    public async Task<IActionResult> AddCafe(AddCafeDto cafeDto , CancellationToken ct )
+    public async Task<IActionResult> Add(AddCafeDto cafeDto , CancellationToken ct )
     {
-        var result = await mediator.Send(new AddCafeService(cafeDto) , ct);
-        return result.IsValid ? Ok(result) : BadRequest(result);
+        var result = await mediator.Send(new AddCafeCommand(cafeDto) , ct);
+        return Ok(OutputApiResult.GenerateOutputApiResult(result));
     }
 
     [HttpGet(nameof(GetAllCafeNames))]
