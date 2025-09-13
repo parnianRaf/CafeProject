@@ -7,11 +7,13 @@ public class CommonExceptionDto :Exception
 {
 
     public int StatusCode { get; }
+    public string? Detail { get; set; }
     
-    private CommonExceptionDto(string message, int statusCode = (int)HttpStatusCode.BadRequest)
+    private CommonExceptionDto(string message, int statusCode = (int)HttpStatusCode.BadRequest,string? detail = null)
         : base(message)
     {
         StatusCode = statusCode;
+        Detail = detail;
     }
 
     public static CommonExceptionDto GenerateCommonException(string message )
@@ -20,7 +22,11 @@ public class CommonExceptionDto :Exception
     }
     public static CommonExceptionDto GenerateCommonException(string message , int statusCode)
     {
-        return new(message , statusCode);
+        return new(message ,statusCode);
+    }
+    public static CommonExceptionDto GenerateCommonException(string message , int statusCode , string detail)
+    {
+        return new(message ,statusCode, detail);
     }
     
 

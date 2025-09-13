@@ -6,7 +6,7 @@ public class User : IdentityUser<Guid>
 {
     private User()
     {
-        Id = Guid.NewGuid();
+        base.Id = Guid.NewGuid();
     }
     
     

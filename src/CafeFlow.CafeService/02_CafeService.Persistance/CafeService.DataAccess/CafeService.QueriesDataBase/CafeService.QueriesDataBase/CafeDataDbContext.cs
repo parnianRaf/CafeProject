@@ -1,4 +1,4 @@
-﻿using CafeService.AppDomain.CafeAgg.Cafe;
+﻿using CafeService.AppDomain.CafeAgg.Entity;
 using Microsoft.EntityFrameworkCore;
 
 namespace CafeService.QueriesDataBase;

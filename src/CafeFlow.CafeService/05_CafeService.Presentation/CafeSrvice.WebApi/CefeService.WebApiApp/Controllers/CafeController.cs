@@ -1,5 +1,5 @@
 using System.Net;
-using CafeFlow.Framework.ResultDtos;
+using CafeFlow.Framework.CommonDtos.ResultDtos;
 using CafeService.AppService.CafeAgg.Commands.AddCafeService.Service;
 using CafeService.AppService.CafeAgg.Queries;
 using CafeService.FrameWorks.Dto.CafeAggDto;

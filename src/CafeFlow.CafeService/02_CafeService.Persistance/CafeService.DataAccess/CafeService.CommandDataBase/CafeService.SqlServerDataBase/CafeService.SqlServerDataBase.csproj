@@ -4,14 +4,20 @@
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <RootNamespace>CafeService.SqlServerDataBase</RootNamespace>
     </PropertyGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\..\..\..\01_CafeService.Domain\CafeService.AppDomain\CafeService.AppDomain.csproj" />
-    </ItemGroup>
+
 
     <ItemGroup>
       <Folder Include="_Common\" />
+    </ItemGroup>
+
+
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\..\..\..\Framework\CafeFlow\CafeFlow.Framework.csproj" />
+      <ProjectReference Include="..\..\..\..\01_CafeService.Domain\CafeService.AppDomain\CafeService.AppDomain.csproj" />
     </ItemGroup>
 
 </Project>

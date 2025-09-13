@@ -4,7 +4,8 @@ namespace CafeService.FrameWorks.Contracts.Repository.Contracts;
 
 public interface ISqlBaseGenericRepository<T> where T : BaseClass
 {
-    void Create(T entity);
+    void Create(T entity); 
+    void AddRange(List<T> entities);
     void Update(T entity);
     void Delete(T entity);
     void CreateAll(IReadOnlyCollection<T> entities);
