@@ -1,4 +1,4 @@
-using CafeService.AppDomain.CafeAgg.Cafe;
+using CafeService.AppDomain.CafeAgg.Entity;
 using CafeService.AppService.CafeAgg.Queries;
 using CafeService.FrameWorks.Contracts.Repository.Contracts;
 using MediatR;

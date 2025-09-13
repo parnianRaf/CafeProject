@@ -6,4 +6,14 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="CafeAgg\Event\" />
+      <Folder Include="ProductAgg\Event\" />
+      <Folder Include="ProductAgg\ValueObjects\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\..\Framework\CafeFlow\CafeFlow.Framework.csproj" />
+    </ItemGroup>
+
 </Project>

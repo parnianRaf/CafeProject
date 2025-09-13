@@ -1,6 +1,7 @@
 ﻿using System.Security.Claims;
-using CafeService.AppDomain.CafeAgg.Cafe;
+using CafeService.AppDomain.CafeAgg.Entity;
 using CafeService.AppDomain.CommonEntity;
+using CafeService.AppDomain.CustomerAgg.Entity;
 using CafeService.AppDomain.ProductAgg.Product;
 using CafeService.SqlServerDataBase.Configuration.EntityConfiguration;
 using Microsoft.AspNetCore.Http;
@@ -18,6 +19,7 @@ public class CafeDbContext:DbContext
     
     public DbSet<Cafe> Cafes { get; set; }
     public DbSet<Product> Products { get; set; }
+    public DbSet<Customer> Customers { get; set; }
 
     public override int SaveChanges()
     {
@@ -45,6 +47,7 @@ public class CafeDbContext:DbContext
     private void ApplyAuditInfo()
     {
         var userIdString = _httpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
         var userId = Guid.TryParse(userIdString, out var guid) ? guid : Guid.Empty;
 
         foreach (var entry in ChangeTracker.Entries<BaseClass>())

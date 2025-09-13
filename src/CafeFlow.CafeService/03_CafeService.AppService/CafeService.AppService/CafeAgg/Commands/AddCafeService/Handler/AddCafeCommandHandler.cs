@@ -1,6 +1,6 @@
+using CafeFlow.Framework.CommonDtos.ResultDtos;
 using CafeFlow.Framework.LogAgg.Log.Contracts;
-using CafeFlow.Framework.ResultDtos;
-using CafeService.AppDomain.CafeAgg.Cafe;
+using CafeService.AppDomain.CafeAgg.Entity;
 using CafeService.AppService.CafeAgg.Commands.AddCafeService.Service;
 using CafeService.FrameWorks.Contracts.Repository.Contracts;
 using CafeService.FrameWorks.Dto.CafeAggDto;

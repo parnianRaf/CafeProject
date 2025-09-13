@@ -11,8 +11,4 @@
       <ProjectReference Include="..\..\..\01_CafeService.Domain\CafeService.AppDomain\CafeService.AppDomain.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Contracts\" />
-    </ItemGroup>
-
 </Project>

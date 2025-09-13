@@ -1,5 +1,5 @@
+using CafeFlow.Framework.CommonDtos.ResultDtos;
 using CafeFlow.Framework.LogAgg.Log.Contracts;
-using CafeFlow.Framework.ResultDtos;
 using CafeService.AppDomain.ProductAgg.Product;
 using CafeService.AppService.ProductAgg.Commands.AddProductAgg.Service;
 using CafeService.FrameWorks.Contracts.Repository.Contracts;

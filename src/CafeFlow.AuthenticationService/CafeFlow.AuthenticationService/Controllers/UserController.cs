@@ -11,12 +11,6 @@ public class UserController(IUserRegisterService userRegisterService , IUserLogI
     public async Task<IActionResult> Register([FromBody] UserRegisterDto userRegisterDto , CancellationToken ct)
     {
         var result = await userRegisterService.Register(userRegisterDto , ct);
-
-        if (result.Any())
-        {
-          return BadRequest(string.Join(",",result.Select(x=>x.Description)));
-        }
-
         return Ok(result);
     }
 
@@ -26,4 +20,12 @@ public class UserController(IUserRegisterService userRegisterService , IUserLogI
         var result = await userLogInService.LogIn(userLogInDto);
         return Ok(result);
     }
+
+    public async Task<IActionResult> RegisterCustomerUserIfNotExists([FromBody] UserRegisterDto userRegisterDto , CancellationToken ct)
+    {
+        var result = await userRegisterService.RegisterCustomerUserIfNotExists(userRegisterDto, ct);
+        return Ok(result);
+    }
+    
+    
 }

@@ -1,5 +1,7 @@
 using System.Text;
 using CafeFlow.Framework.AthenticationToken.Extensions;
+using CafeFlow.Framework.Caching.Service;
+using CafeFlow.Framework.Caching.Service.Contracts;
 using CafeFlow.Framework.LogAgg.Log.Contracts;
 using CafeFlow.Framework.LogAgg.LogService;
 using CafeFlow.Framework.Provider.Notification.Service;
@@ -10,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Serilog;
+using StackExchange.Redis;
 
 
 namespace CafeFlow.Framework.Configuration;
@@ -64,6 +67,17 @@ public static class StartUpConfiguration
          
 
         services.AddSingleton<ILogService, LogService>();
+        services.AddSingleton<IRedisCachingService, RedisCachingService>();
+        services.AddStackExchangeRedisCache(opt =>
+        {
+            opt.Configuration = config["Redis:Configuration"];
+            opt.InstanceName = config["Redis:InstanceName"];
+        });
+        services.AddSingleton<IConnectionMultiplexer>(sp =>
+        {
+            var configuration = configure["Database:Redis"]!;
+            return ConnectionMultiplexer.Connect(configuration);
+        });
         return hostBuilder;
     }
 }

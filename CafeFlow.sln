@@ -17,9 +17,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CafeFlow.NotificationServic
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CafeFlow.CustomerService", "CafeFlow.CustomerService", "{50FC5C7B-ACFB-41FB-8977-60B9936B056C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CustomerService.Domain", "CustomerService.Domain", "{7F681F58-1C15-4E13-B91D-62B41824BBC4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01_CustomerService.Domain", "01_CustomerService.Domain", "{7F681F58-1C15-4E13-B91D-62B41824BBC4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CustomerService.Persistance", "CustomerService.Persistance", "{4005AA4D-DDCC-4F89-8B16-DA7C82366882}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02_CustomerService.Persistance", "02_CustomerService.Persistance", "{4005AA4D-DDCC-4F89-8B16-DA7C82366882}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerService.AppDomain", "src\CafeFlow.CustomerService\CustomerService.Domain\CustomerService.AppDomain\CustomerService.AppDomain.csproj", "{FC63D8D3-27DB-4BCD-BC9D-A57A077C1EE6}"
 EndProject
@@ -46,9 +46,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CafeService.CommandRepo", "CafeService.CommandRepo", "{26BC457A-2025-43AC-92A1-E8D7F0056722}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CafeService.QueryRepo", "CafeService.QueryRepo", "{B4FCB941-AA34-406D-BFD2-CD795E14B879}"
-	ProjectSection(SolutionItems) = preProject
-		Configuration\StartUpConfiguration.cs = Configuration\StartUpConfiguration.cs
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CafeService.QueryRepositories", "src\CafeFlow.CafeService\02_CafeService.Persistance\CafeService.Repos\CafeService.QueryRepos\CafeService.QueryRepositories\CafeService.QueryRepositories.csproj", "{BDD927DE-E8F2-4A88-99D2-789C6ACF359C}"
 EndProject
@@ -71,6 +68,34 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CafeService.SqlServerDataBase", "src\CafeFlow.CafeService\02_CafeService.Persistance\CafeService.DataAccess\CafeService.CommandDataBase\CafeService.SqlServerDataBase\CafeService.SqlServerDataBase.csproj", "{B815C639-8E99-47C7-8C38-0C6E2892DBA9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CafeService.SqlCommandRepository", "src\CafeFlow.CafeService\02_CafeService.Persistance\CafeService.Repos\CafeService.CommandRepo\CafeService.SqlCommandRepository\CafeService.SqlCommandRepository.csproj", "{7C15FABA-96BA-4935-B566-64380B147568}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CustomerService.DataAccess", "CustomerService.DataAccess", "{ABD32FAA-C7E2-4812-B26E-65BAC554985D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CustomerService.Repos", "CustomerService.Repos", "{D83ED7A3-8B75-42E6-906F-6C8EF131380F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CustomerService.CommandDataBase", "CustomerService.CommandDataBase", "{9D4500DB-BEC2-4ECD-8BBA-9EA00ED40848}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CustomerService.QueriesDataBase", "CustomerService.QueriesDataBase", "{0045BF4B-F199-4702-B915-4D801775DD36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CafeService.SqlCommandDataBase", "src\CafeFlow.CustomerService\02_CustomerService.Persistance\CustomerService.DataAccess\CustomerService.CommandDataBase\CafeService.SqlCommandDataBase\CafeService.SqlCommandDataBase.csproj", "{BC8F155E-E41F-46E8-A1FD-5645E21DA05F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerService.QueriesDataBase", "src\CafeFlow.CustomerService\02_CustomerService.Persistance\CustomerService.DataAccess\CustomerService.QueriesDataBase\CustomerService.QueriesDataBase\CustomerService.QueriesDataBase.csproj", "{4E7AA42F-8AB9-4FEF-B791-C0C6F5293C49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandRepositories", "src\CafeFlow.CustomerService\02_CustomerService.Persistance\CustomerService.Respository\CommandRepositories\CommandRepositories.csproj", "{46706AA1-856A-40EA-924D-6DB6E2351F49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueriesRepositories", "src\CafeFlow.CustomerService\02_CustomerService.Persistance\CustomerService.Respository\QueriesRepositories\QueriesRepositories.csproj", "{8A283ED5-11DB-4994-86E3-B84798849D81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "src\CafeFlow.CustomerService\04_CustomerService.Contracts\Contracts\Contracts.csproj", "{17F67B64-6D33-4799-BFE4-9FDD4AD3DB79}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04_CustomerService.Contracts", "04_CustomerService.Contracts", "{0BD72751-1C38-4A8F-A1D3-75F9A321D534}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03_CustomerService.AppService", "03_CustomerService.AppService", "{6D58A754-7F19-40B3-BEF0-80E4244549A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerService.AppService", "src\CafeFlow.CustomerService\03_CustomerService.AppService\CustomerService.AppService\CustomerService.AppService.csproj", "{3A3D8AE6-5FFE-4B5E-9418-8BD09375B043}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05_CustomerService.Presentation", "05_CustomerService.Presentation", "{1057AC0F-F710-4806-B2F2-F109F2BEBCD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerService.WebApiApp", "src\CafeFlow.CustomerService\05_CustomerService.Presentation\CustomerService.WebApiApp\CustomerService.WebApiApp.csproj", "{0C121FE2-1A50-4C1F-B912-58AD6DBA04D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -134,6 +159,34 @@ Global
 		{7C15FABA-96BA-4935-B566-64380B147568}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C15FABA-96BA-4935-B566-64380B147568}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C15FABA-96BA-4935-B566-64380B147568}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC8F155E-E41F-46E8-A1FD-5645E21DA05F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC8F155E-E41F-46E8-A1FD-5645E21DA05F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC8F155E-E41F-46E8-A1FD-5645E21DA05F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC8F155E-E41F-46E8-A1FD-5645E21DA05F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E7AA42F-8AB9-4FEF-B791-C0C6F5293C49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E7AA42F-8AB9-4FEF-B791-C0C6F5293C49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E7AA42F-8AB9-4FEF-B791-C0C6F5293C49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E7AA42F-8AB9-4FEF-B791-C0C6F5293C49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46706AA1-856A-40EA-924D-6DB6E2351F49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46706AA1-856A-40EA-924D-6DB6E2351F49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46706AA1-856A-40EA-924D-6DB6E2351F49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46706AA1-856A-40EA-924D-6DB6E2351F49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A283ED5-11DB-4994-86E3-B84798849D81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A283ED5-11DB-4994-86E3-B84798849D81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A283ED5-11DB-4994-86E3-B84798849D81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A283ED5-11DB-4994-86E3-B84798849D81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17F67B64-6D33-4799-BFE4-9FDD4AD3DB79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17F67B64-6D33-4799-BFE4-9FDD4AD3DB79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17F67B64-6D33-4799-BFE4-9FDD4AD3DB79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17F67B64-6D33-4799-BFE4-9FDD4AD3DB79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A3D8AE6-5FFE-4B5E-9418-8BD09375B043}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A3D8AE6-5FFE-4B5E-9418-8BD09375B043}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A3D8AE6-5FFE-4B5E-9418-8BD09375B043}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A3D8AE6-5FFE-4B5E-9418-8BD09375B043}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C121FE2-1A50-4C1F-B912-58AD6DBA04D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C121FE2-1A50-4C1F-B912-58AD6DBA04D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C121FE2-1A50-4C1F-B912-58AD6DBA04D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C121FE2-1A50-4C1F-B912-58AD6DBA04D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -169,6 +222,20 @@ Global
 		{37ACEC58-0494-40DA-8F00-B8760B0BC6AE} = {0F0A6E3A-D538-433F-B61F-B5C9F12B08EA}
 		{B815C639-8E99-47C7-8C38-0C6E2892DBA9} = {9EA1809F-A2D7-458C-AAE2-57FE60BEC37F}
 		{7C15FABA-96BA-4935-B566-64380B147568} = {26BC457A-2025-43AC-92A1-E8D7F0056722}
+		{ABD32FAA-C7E2-4812-B26E-65BAC554985D} = {4005AA4D-DDCC-4F89-8B16-DA7C82366882}
+		{D83ED7A3-8B75-42E6-906F-6C8EF131380F} = {4005AA4D-DDCC-4F89-8B16-DA7C82366882}
+		{9D4500DB-BEC2-4ECD-8BBA-9EA00ED40848} = {ABD32FAA-C7E2-4812-B26E-65BAC554985D}
+		{0045BF4B-F199-4702-B915-4D801775DD36} = {ABD32FAA-C7E2-4812-B26E-65BAC554985D}
+		{BC8F155E-E41F-46E8-A1FD-5645E21DA05F} = {9D4500DB-BEC2-4ECD-8BBA-9EA00ED40848}
+		{4E7AA42F-8AB9-4FEF-B791-C0C6F5293C49} = {0045BF4B-F199-4702-B915-4D801775DD36}
+		{46706AA1-856A-40EA-924D-6DB6E2351F49} = {D83ED7A3-8B75-42E6-906F-6C8EF131380F}
+		{8A283ED5-11DB-4994-86E3-B84798849D81} = {D83ED7A3-8B75-42E6-906F-6C8EF131380F}
+		{0BD72751-1C38-4A8F-A1D3-75F9A321D534} = {50FC5C7B-ACFB-41FB-8977-60B9936B056C}
+		{17F67B64-6D33-4799-BFE4-9FDD4AD3DB79} = {0BD72751-1C38-4A8F-A1D3-75F9A321D534}
+		{6D58A754-7F19-40B3-BEF0-80E4244549A0} = {50FC5C7B-ACFB-41FB-8977-60B9936B056C}
+		{3A3D8AE6-5FFE-4B5E-9418-8BD09375B043} = {6D58A754-7F19-40B3-BEF0-80E4244549A0}
+		{1057AC0F-F710-4806-B2F2-F109F2BEBCD2} = {50FC5C7B-ACFB-41FB-8977-60B9936B056C}
+		{0C121FE2-1A50-4C1F-B912-58AD6DBA04D4} = {1057AC0F-F710-4806-B2F2-F109F2BEBCD2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8489AF63-7C42-4F8F-AB66-40FF5077597B}

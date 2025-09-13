@@ -17,12 +17,27 @@ public class ExceptionHandlingMiddleware(RequestDelegate next , ILogService logS
             await next(context);
 
         }
+        catch (CommonExceptionDto commonException)
+        {
+            var statusCode = commonException.StatusCode;
+            var errorResponse = new
+            {
+                statusCode = statusCode,
+                message = commonException.Message,
+                #if DEBUG
+                details = commonException.Detail,
+                #endif
+            };
+            var json = JsonSerializer.Serialize(errorResponse);
+            context.Response.StatusCode = statusCode;
+            context.Response.ContentType = "application/json";
+            await context.Response.WriteAsync(json);
+        }
         catch (System.Exception e)
         {
             var statusCode = e switch
             {
                 ValidationException => (int)HttpStatusCode.BadRequest,
-                CommonExceptionDto commonExceptionDto => commonExceptionDto.StatusCode,
                 _ => (int)HttpStatusCode.InternalServerError
             };
             if(statusCode == (int)HttpStatusCode.InternalServerError)
