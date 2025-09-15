@@ -26,6 +26,7 @@ public static class Configuration
         {
             opt.BaseAddress = new Uri(configuration["UserService:CafeServiceAddress"]!);
         });
+        services.AddScoped<ICafeServiceOrder, CafeServiceOrder>();
         return services;
     }
 }

@@ -1,7 +1,7 @@
 using CafeService.AppDomain.CafeProductAgg.Entity;
 using CafeService.FrameWorks.Dto.RequestDtos;
 
-namespace CafeService.AppService.OrderAgg.Service;
+namespace CafeService.FrameWorks.Contracts.Service.Contracts;
 
 public interface IInventoryCommandService
 {
