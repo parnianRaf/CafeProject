@@ -1,5 +1,6 @@
 using CafeService.AppDomain.CafeProductAgg.Entity;
 using CafeService.FrameWorks.Contracts.Repository.Contracts;
+using CafeService.FrameWorks.Contracts.Service.Contracts;
 using CafeService.FrameWorks.Dto.RequestDtos;
 
 namespace CafeService.AppService.OrderAgg.Service;

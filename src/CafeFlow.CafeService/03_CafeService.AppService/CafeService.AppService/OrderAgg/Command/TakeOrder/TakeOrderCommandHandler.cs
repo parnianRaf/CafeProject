@@ -2,6 +2,7 @@ using System.Net;
 using CafeFlow.Framework.CommonDtos.ResultDtos;
 using CafeService.AppService.OrderAgg.Service;
 using CafeService.FrameWorks.Contracts.Repository.Contracts;
+using CafeService.FrameWorks.Contracts.Service.Contracts;
 using MediatR;
 
 namespace CafeService.AppService.OrderAgg.Command.TakeOrder;
